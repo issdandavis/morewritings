@@ -4,6 +4,7 @@ Command-line interface for morewritings.
 import click
 import json
 import os
+import yaml
 from pathlib import Path
 from typing import Optional
 from ..generators import SceneGenerator, ProfileGenerator, SceneryGenerator
@@ -199,8 +200,6 @@ def batch_generate(batch_file: str, output_dir: str, api_key: Optional[str]):
           prompt: "A wise old wizard"
           name: "Merlin"
     """
-    import yaml
-    
     try:
         # Load batch file
         with open(batch_file) as f:
